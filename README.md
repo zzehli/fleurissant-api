@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+categories: https://youtu.be/hURUMwdCWuI?si=MPABq1IvY2H4WDnA&t=1441
+product: https://youtu.be/hURUMwdCWuI?si=xXLqtEoB0pr1PHsn&t=3349
+https://guides.rubyonrails.org/active_record_migrations.html#changing-existing-migrations
