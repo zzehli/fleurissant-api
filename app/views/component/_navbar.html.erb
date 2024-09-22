@@ -5,8 +5,12 @@
         </div>
         <div class="navbar-center lg:flex">
             <ul class="menu menu-horizontal px-1 font-medium">
-                <li><a>Home</a></li>
-                <li><a>Collection</a></li>
+                <li>
+                <%= link_to "Home", root_path %>
+                </li>
+                <li>
+                <%= link_to "Collection", products_path %>
+                </li>
                 <li><a>About</a></li>
             </ul>
         </div>

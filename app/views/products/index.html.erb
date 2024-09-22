@@ -1,0 +1,27 @@
+<div class="w-full flex justify-center py-3">
+      <div>
+          <p class="text-3xl py-7">Our Products</p>
+      </div>
+  </div>
+  <div class="flex flex-wrap justify-center items-center gap-10">
+      <% @products.each do |product| %>
+          <%= link_to product_path(product) do %>
+
+            <div class="card bg-base-100 w-80 shadow-xl">
+                  <figure>
+                      <img
+                      src= <%= product.image.present?? product.image : "https://placehold.co/900x500.webp" %>
+                      alt="Shoes" />
+                  </figure>
+                <div class="card-body">
+                    <h2 class="card-title">
+                      <%= product.name %>
+                    </h2>
+                    <div class="card-actions justify-end">
+                    </div>
+                </div>
+            </div>
+          <% end %>
+
+        <% end %>
+  </div>

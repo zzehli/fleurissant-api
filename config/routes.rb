@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   get "product" => "product#index"
+  resources :products, only: [ :show, :index ]
   # resources :products, only: [ :show ]
 end
