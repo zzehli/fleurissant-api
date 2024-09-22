@@ -1,28 +1,21 @@
 # README
+## INtro
+Run dev env with: `./bin/dev`
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## Resources
+### DB management:
+* insert data to db:
+    ```
+    plants(dev)* (1..10).each do |i|
+    plants(dev)*   category = Category.find_or_create_by(name: "Category #{i}")
+    plants(dev)*   Product.create!(name: "Product #{i}", description: "test description", price: i, category: category)
+    plants(dev)> end
+    ```
+    see: https://guides.rubyonrails.org/active_record_querying.html
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* migrations: https://guides.rubyonrails.org/active_record_migrations.html#changing-existing-migrations
 
 categories: https://youtu.be/hURUMwdCWuI?si=MPABq1IvY2H4WDnA&t=1441
 product: https://youtu.be/hURUMwdCWuI?si=xXLqtEoB0pr1PHsn&t=3349
-https://guides.rubyonrails.org/active_record_migrations.html#changing-existing-migrations
