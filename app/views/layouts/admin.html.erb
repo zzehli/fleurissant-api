@@ -14,8 +14,13 @@
   </head>
 
   <body>
-    <main>
-    <main class="container mx-auto mt-10 px-1 max-w-screen-2xl">
+    <main class="flex container mx-auto px-1 max-w-screen-2xl">
+      <nav class="w-64 h-screen bg-base-300 sticky">
+        <ul class="menu menu-lg rounded-box w-full font-semibold gap-4 mt-5">
+          <li><a>Products</a></li>
+          <li><a>Orders</a></li>
+        </ul>
+      </nav>
       <%= yield %>
     </main>
   </body>
