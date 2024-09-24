@@ -21,3 +21,4 @@ Run dev env with: `./bin/dev`
 
 ## Backlog
 - [ ] redo application page layout, move navbar to a new layer
+- [ ] admin/products/:id/edit "update" button routing
