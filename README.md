@@ -22,4 +22,8 @@ Run dev env with: `./bin/dev`
 ## Backlog
 - [ ] redo application page layout, move navbar to a new layer
 - [x] admin/products/:id/edit "update" button routing
+- [ ] active storage setup: https://youtu.be/hURUMwdCWuI?si=daU6GO7F8dYTc-P8&t=2697
 - [ ] crop images when upload
+- [ ] cart customer side
+- [ ] payment
+- [ ] deploy
