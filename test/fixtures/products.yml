@@ -4,7 +4,6 @@ one:
   name: MyString
   description: MyText
   price: 1
-  category: one
   active: false
   link: MyString
 
@@ -12,6 +11,5 @@ two:
   name: MyString
   description: MyText
   price: 1
-  category: two
   active: false
   link: MyString

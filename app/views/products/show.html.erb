@@ -1,9 +1,5 @@
 <div class="justify-center flex flex-col gap-10 sm:flex-row">
-    <figure>
-        <img
-        src= <%= @product.image.present?? @product.image : "https://placehold.co/500x600.webp" %>
-        alt= "product name" />
-    </figure>
+    <%= @product.image.present?? image_tag(@product.image) : image_tag("https://placehold.co/500x600.webp") %>
     <div class="flex flex-col justify-between">
         <div>
             <p class="font-semibold text-4xl mb-6"><%= @product.name %></p>

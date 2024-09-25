@@ -3,7 +3,7 @@ Fleurissant is an online floral boutique. The shop is a rails app that supports 
 
 ## Intro
 Run dev env with: `./bin/dev`
-
+Clear cache: `bin/rails tmp:clear`
 ## Resources
 * insert data to db:
     ```

@@ -18,11 +18,7 @@
           <%= link_to product_path(product) do %>
 
             <div class="card bg-base-100 w-64 shadow-xl">
-                  <figure>
-                      <img
-                      src= <%= product.image.present?? product.image : "https://placehold.co/500x600.webp" %>
-                      alt="Shoes" />
-                  </figure>
+                  <%= product.image.present?? image_tag(product.image.variant(:card)) : image_tag("https://placehold.co/500x600.webp") %>
                 <div class="card-body">
                     <h2 class="card-title">
                       <%= product.name %>
