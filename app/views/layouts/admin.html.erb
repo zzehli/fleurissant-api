@@ -15,13 +15,13 @@
   </head>
 
   <body>
-    <main class="flex container mx-auto px-1 max-w-screen-2xl">
-      <nav class="w-64 h-screen bg-base-300 sticky">
+    <main class="flex container px-1 max-w-full">
+      <nav class="w-64 h-auto bg-base-300 sticky">
         <ul class="menu menu-lg rounded-box w-full font-semibold gap-4 mt-5">
           <li><%= link_to "Dashboard", admin_path %>
           <li><%= link_to "Products", admin_products_path %>
           </li>
-          <li><a>Orders</a></li>
+          <%# <li><a>Orders</a></li> %>
         </ul>
       </nav>
       <%= yield %>
