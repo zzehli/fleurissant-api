@@ -15,7 +15,6 @@ class Admin::ProductsTest < ApplicationSystemTestCase
     click_on "New product"
 
     check "Active" if @admin_product.active
-    fill_in "Category", with: @admin_product.category_id
     fill_in "Description", with: @admin_product.description
     fill_in "Name", with: @admin_product.name
     fill_in "Price", with: @admin_product.price
@@ -30,7 +29,6 @@ class Admin::ProductsTest < ApplicationSystemTestCase
     click_on "Edit this product", match: :first
 
     check "Active" if @admin_product.active
-    fill_in "Category", with: @admin_product.category_id
     fill_in "Description", with: @admin_product.description
     fill_in "Name", with: @admin_product.name
     fill_in "Price", with: @admin_product.price
