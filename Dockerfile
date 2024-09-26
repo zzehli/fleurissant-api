@@ -13,7 +13,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 node && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Set production environment
@@ -28,8 +28,8 @@ FROM base AS build
 # Install packages needed to build gems
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential git libpq-dev pkg-config && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
-
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives \
+    npm install
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
