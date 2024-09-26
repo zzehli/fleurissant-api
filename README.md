@@ -1,9 +1,9 @@
 # README
 Fleurissant is an online floral boutique. The shop is a rails app that supports admin and regular customer user types. As a shop owner, one can manage inventory (create, update, remove products), and orders (update, remove). As a customer, one can shop and pay for the plants.
 
-## Intro
-Run dev env with: `./bin/dev`
-Clear cache: `bin/rails tmp:clear`
+## Dev
+- Run dev env with: `./bin/dev`
+- Clear cache: `bin/rails tmp:clear`
 ## Resources
 * insert data to db:
     ```
@@ -22,8 +22,7 @@ Clear cache: `bin/rails tmp:clear`
 ## Backlog
 - [ ] redo application page layout, move navbar to a new layer
 - [x] admin/products/:id/edit "update" button routing
-- [ ] active storage setup: https://youtu.be/hURUMwdCWuI?si=daU6GO7F8dYTc-P8&t=2697
-- [ ] crop images when upload
-- [ ] cart customer side
+- [x] active storage setup:
+- [x] crop images when upload
+- [ ] cart (stock and orders: 5117 models)
 - [ ] payment
-- [ ] deploy
