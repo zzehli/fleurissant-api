@@ -27,6 +27,11 @@
   </div>
 
   <div class="my-5">
+    <% if admin_product.image.present? %>
+      <%= image_tag admin_product.image, class: "w-20 object-cover"%>
+    <% end %>
+
+
     <%= form.label :image %>
     <%= form.file_field :image, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
