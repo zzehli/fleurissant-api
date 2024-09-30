@@ -31,4 +31,3 @@ Check it out the live [demo](https://mysite-i60f.onrender.com/)!
 - [x] crop images when upload
 - [ ] cart (stock and orders: models)
 - [ ] payment
-- https://youtu.be/hURUMwdCWuI?si=8kAnp_zXqv6SWKWE&t=3946 update product keep images
