@@ -5,17 +5,26 @@
 
   <% content_for :title, "Orders" %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center mb-4">
     <h1 class="font-bold text-4xl">Orders</h1>
     <%= link_to "New order", new_admin_order_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="admin_orders" class="min-w-full">
-    <% @admin_orders.each do |admin_order| %>
+    <h1 class="font-bold text-2xl">Not Fulfilled Orders</h1>
+    <% @not_fulfilled.each do |admin_order| %>
       <%= render admin_order %>
       <p>
         <%= link_to "Show this order", admin_order_path(admin_order), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       </p>
     <% end %>
   </div>
+  <div class="divider"></div>
+  <h1 class="font-bold text-2xl">Fulfilled Orders</h1>
+    <% @fulfilled.each do |admin_order| %>
+      <%= render admin_order %>
+      <p>
+        <%= link_to "Show this order", admin_order_path(admin_order), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      </p>
+    <% end %>
 </div>
