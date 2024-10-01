@@ -29,5 +29,5 @@ Check it out the live [demo](https://mysite-i60f.onrender.com/)!
 - [x] admin/products/:id/edit "update" button routing
 - [x] active storage setup:
 - [x] crop images when upload
-- [ ] cart (stock and orders: models)
+- [ ] cart (stock and orders: models) https://youtu.be/hURUMwdCWuI?si=XtI7TtfR8FnB7B8_&t=5056
 - [ ] payment
