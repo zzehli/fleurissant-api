@@ -1,6 +1,6 @@
 <div class="justify-center flex flex-col gap-10 sm:flex-row h-96 w-auto">
     <%= @product.image.present?? image_tag(@product.image) : image_tag("https://placehold.co/500x600.webp") %>
-    <div class="flex flex-col justify-between">
+    <div data-controller="products" data-products-product-value="<%= @product.to_json %>" class="flex flex-col justify-between">
         <div>
             <p class="font-semibold text-4xl mb-6"><%= @product.name %></p>
             <p class="text-3xl mb-4">$<%= @product.price%>
@@ -9,7 +9,7 @@
         <div class="pb-10">
             <% @product.stocks.each do |stock| %>
                 <% if stock.amount > 0 %>
-                    <button class="btn btn-primary">Add to Cart</button>   
+                    <button data-action="click->products#addToCart" class="btn btn-primary">Add to Cart</button>   
                 <% else %>
                     <div class="tooltip tooltip-primary lg:tooltip" data-tip="Out of Stock">                    
                         <button disabled="disabled" class="btn btn-primary">Add to Cart</button>            
@@ -17,6 +17,11 @@
                 <% end %>
             <% end %>
 
+        </div>
+        <div class="toast hidden" data-products-target="name">
+            <div class="alert alert-success">
+            <span><%= @product.name %> added to cart.</span>
+            </div>
         </div>
         
 

@@ -29,6 +29,6 @@ Check out the live [demo](https://mysite-i60f.onrender.com/)!
 - [x] admin/products/:id/edit "update" button routing
 - [x] active storage setup:
 - [x] crop images when upload
-- [ ] cart (stock and orders: models)
+- [x] cart (stock and orders: models)
 - [ ] payment
 - [ ] table display on admin side

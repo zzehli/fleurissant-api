@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end
 
   get "admin" => "admin#index"
-  # get "product" => "product#index"
+  get "cart" => "carts#show"
   resources :products, only: [ :show, :index ]
   # resources :products, only: [ :show ]
 end
