@@ -13,8 +13,6 @@ And a video [demo](https://youtu.be/Dgs-hVPaz4I)
 * UI with Tailwind and daisyUI
 * Database using Postgres
 
-## Features
-
 ## Dev Notes
 - Run dev env with: `./bin/dev`
 - Clear cache: `bin/rails tmp:clear`
