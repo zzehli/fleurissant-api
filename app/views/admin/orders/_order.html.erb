@@ -22,8 +22,8 @@
   <% if order.order_products.any? %>
       <strong class="block font-medium mb-1">Product List:</strong>
     <% order.order_products.each do |op| %>
-    <%= op.product.name %>
-    <%= op.quantity %>
+    <p>Product: <%= op.product.name %></p>
+    <p class="mb-5">Quantity: <%= op.quantity %></p>
     <% end %>
   <% end %>
 </div>

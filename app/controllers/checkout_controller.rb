@@ -45,7 +45,9 @@ class CheckoutController < ApplicationController
   end
 
   def success
-    render :success
+    # probably not the best practice since this page should fetch the data from
+    # webhook directly and inaccessible except when payment is successful
+    @order = Order.last
   end
 
   def cancel
