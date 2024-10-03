@@ -3,7 +3,7 @@ Fleurissant is an online floral boutique. The shop is a rails app that supports 
 
 Check out the live [site](https://mysite-i60f.onrender.com/)!
 
-And a video [demo](https://youtu.be/Dgs-hVPaz4I)
+And a video [demo](https://youtu.be/FxJsEk3_jPs)
 
 ## Techical details
 * Dedicated admin interface to manage products, stocks and orders
