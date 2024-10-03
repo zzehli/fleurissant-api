@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get "admin" => "admin#index"
   get "cart" => "carts#show"
   post "checkout" => "checkout#create"
+  get "checkout/success" => "checkout#success"
+  get "checkout/cancel" => "checkout#cancel"
+
+  post "webhook" => "webhooks#stripe"
   resources :products, only: [ :show, :index ]
   # resources :products, only: [ :show ]
 end

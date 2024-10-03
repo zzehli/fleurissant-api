@@ -4,14 +4,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   initialize() {
     const cart = JSON.parse(localStorage.getItem("cart"))
+    const elem = document.getElementById("checkout")
     if (!cart) {
+      elem.setAttribute("disabled", "disabled")
       return
     } else if (cart.length === 0) {
-      console.log("here")
-      const elem = document.getElementById("checkout")
       elem.setAttribute("disabled", "disabled")
     } else {
-      const elem = document.getElementById("checkout")
       elem.removeAttribute("disabled")
     }
     let total = 0
@@ -37,6 +36,11 @@ export default class extends Controller {
     totalContainer.appendChild(totalEl)
   }
 
+  clear() {
+    localStorage.removeItem("cart")
+    window.location.reload()
+  }
+
   removeFromCart(event) {
     const cart = JSON.parse(localStorage.getItem("cart"))
     const values = JSON.parse(event.target.value)
@@ -57,6 +61,7 @@ export default class extends Controller {
     }
 
     const csrfToken = document.querySelector("meta[name='csrf-token']").content
+    localStorage.removeItem("cart")
 
     fetch("/checkout", {
       method: "POST",
