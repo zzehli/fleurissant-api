@@ -34,8 +34,8 @@ class CheckoutController < ApplicationController
     session = Stripe::Checkout::Session.create(
       mode: "payment",
       line_items: line_items,
-      success_url: "http://localhost:3000/checkout/success",
-      cancel_url: "http://localhost:3000/checkout/cancel",
+      success_url: "https://mysite-i60f.onrender.com/checkout/success",
+      cancel_url: "https://mysite-i60f.onrender.com/checkout/cancel",
       shipping_address_collection: {
         allowed_countries: [ "CA" ]
       }
