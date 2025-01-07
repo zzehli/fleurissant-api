@@ -7,17 +7,18 @@ class Admin::StocksController < AdminController
     render json: @admin_stocks
   end
 
+  # GET /admin/products/1/stocks/1 or /admin/products/1/stocks/1.json
   def show
     render json: @admin_stock
   end
 
+  # GET /admin/products/1/stocks/new or /admin/products/1/stocks/new.json
   def new
     @product = Product.find(params[:product_id])
     @admin_stock = Stock.new
     render json: { stock: @admin_stock, product: @product }
   end
 
-  # GET /admin/products/1/stocks/1/edit or /admin/products/1/stocks/1/edit.json
   def edit
     @product = Product.find(params[:product_id])
     @admin_stock = Stock.find(params[:id])
