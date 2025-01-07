@@ -5,19 +5,23 @@ class Admin::OrdersController < AdminController
   def index
     @not_fulfilled = Order.where(fulfilled: false).order(created_at: :asc)
     @fulfilled = Order.where(fulfilled: true).order(created_at: :asc)
+    render json: { not_fulfilled: @not_fulfilled, fulfilled: @fulfilled }
   end
 
   # GET /admin/orders/1 or /admin/orders/1.json
   def show
+    render json: @admin_order
   end
 
   # GET /admin/orders/new
   def new
     @admin_order = Order.new
+    render json: @admin_order
   end
 
   # GET /admin/orders/1/edit
   def edit
+    render json: @admin_order
   end
 
   # POST /admin/orders or /admin/orders.json

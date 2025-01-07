@@ -1,21 +1,27 @@
 class Admin::StocksController < AdminController
   before_action :set_admin_stock, only: %i[ show edit update destroy ]
 
+  # GET /admin/products/1/stocks or /admin/products/1/stocks.json
   def index
     @admin_stocks = Product.find(params[:product_id]).stocks
+    render json: @admin_stocks
   end
 
   def show
+    render json: @admin_stock
   end
 
   def new
     @product = Product.find(params[:product_id])
     @admin_stock = Stock.new
+    render json: { stock: @admin_stock, product: @product }
   end
 
+  # GET /admin/products/1/stocks/1/edit or /admin/products/1/stocks/1/edit.json
   def edit
     @product = Product.find(params[:product_id])
     @admin_stock = Stock.find(params[:id])
+    render json: { stock: @admin_stock, product: @product }
   end
 
   def create

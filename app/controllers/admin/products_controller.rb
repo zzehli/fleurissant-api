@@ -4,19 +4,23 @@ class Admin::ProductsController < AdminController
   # GET /admin/products or /admin/products.json
   def index
     @admin_products = Product.all
+    render json: @admin_products
   end
 
   # GET /admin/products/1 or /admin/products/1.json
   def show
+    render json: @admin_product
   end
 
   # GET /admin/products/new
   def new
     @admin_product = Product.new
+    render json: @admin_product
   end
 
   # GET /admin/products/1/edit
   def edit
+    render json: @admin_product
   end
 
   # POST /admin/products or /admin/products.json
