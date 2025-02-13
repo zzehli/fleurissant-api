@@ -17,7 +17,7 @@ gem "stimulus-rails"
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+# gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -62,6 +62,10 @@ end
 
 gem "devise", "~> 4.9"
 
+gem 'devise-jwt'
+
 gem "stripe", "~> 13.3"
 
 gem 'rack-cors'
+
+gem 'jsonapi-serializer'

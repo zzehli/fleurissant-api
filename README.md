@@ -4,3 +4,4 @@ API for the Fleurissant app.
 - Run dev env with: `./bin/dev`
 - Clear cache: `bin/rails tmp:clear`
 - start postgres `sudo service postgresql start`
+- update gemfile `bundle update`
