@@ -5,16 +5,16 @@ Rails.application.routes.draw do
       resources :stocks
     end
   end
-  devise_for :admins
-  # devise_for :admins, path: 'admins', path_names: { 
-  #   sign_in: 'login', 
-  #   sign_out: 'logout'
-  #   # registration: 'signup' 
-  # },
-  # controllers: {
-  #   sessions: 'admins/sessions',
-  #   registrations: 'admins/registrations'
-  # }
+  # devise_for :admins
+  devise_for :admins, path: 'admin', path_names: { 
+    sign_in: 'login', 
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'admins/sessions',
+    registrations: 'admins/registrations'
+  }
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
