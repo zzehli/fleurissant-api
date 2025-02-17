@@ -12,7 +12,8 @@ class Admins::SessionsController < Devise::SessionsController
   end
 
   def respond_to_on_destroy
-    if current_user
+      if current_admin
+      Rails.logger.debug "Current admin: #{current_admin.inspect}"
       render json: {
         status: 200,
         message: "logged out successfully"
