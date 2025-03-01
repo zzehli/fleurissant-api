@@ -1,0 +1,1 @@
+getting started with factory_bot: https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md 
