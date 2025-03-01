@@ -1,7 +1,7 @@
 FactoryBot.define do
     puts "define a product"
     factory :product do
-        name { 'product1' }
-        price { 10 }
+        sequence(:name){ |n| "product#{n}" }
+        sequence(:price) { |n| n}
     end
 end

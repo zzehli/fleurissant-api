@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "GET /products", type: :request do
+RSpec.describe "GET /products/:id", type: :request do
   context 'with valid parameters' do
     let!(:product1) { create(:product) }
 
     before do
-      get "/products"
+      get "/products/#{product1.id}"
     end
 
     it 'returns a 200 OK status' do
@@ -15,7 +15,7 @@ RSpec.describe "GET /products", type: :request do
     it 'returns the product' do
       puts response.body
       json = JSON.parse(response.body)
-      expect(json.first['name']).to eq(product1.name)
+      expect(json['name']).to eq(product1.name)
     end
   end
 end
