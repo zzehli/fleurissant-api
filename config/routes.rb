@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   controllers: {
     sessions: 'admins/sessions',
     registrations: 'admins/registrations'
-  }
+  }, defaults: { format: :json }
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -42,5 +42,6 @@ Rails.application.routes.draw do
 
   post "webhook" => "webhooks#stripe"
   resources :products, only: [ :show, :index ]
-  # resources :products, only: [ :show ]
+  
+  get '/current_admin', to: 'current_admin#index'
 end
