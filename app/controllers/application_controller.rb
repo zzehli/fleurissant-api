@@ -11,4 +11,10 @@ class ApplicationController < ActionController::API
   #     port: request.port
   #   }
   # end
+  def set_product_json(product)
+    product.as_json.merge(image_url: product.image_url)
+  end
+  def set_products_json(products)
+    products.map { |product| set_product_json(product) }
+  end
 end

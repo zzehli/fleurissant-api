@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    render json: @products.map { |product| product.as_json.merge(image_url: product.image_url) }
+    render json: set_products_json(@products)
   end
 
   def show
     @product = Product.find(params[:id])
-    render json: @product.as_json.merge(image_url: @product.image_url)
+    render json: set_product_json(@product)
   end
 end
