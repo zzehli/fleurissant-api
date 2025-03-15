@@ -10,8 +10,9 @@
     plants(dev)> end
     ```
     see: https://guides.rubyonrails.org/active_record_querying.html
-
+* seed data thru `db/seeds.rb`: write seeding code in the file and run `rails db:seed`
 * migrations: https://guides.rubyonrails.org/active_record_migrations.html#changing-existing-migrations
 * Active Storage: for manage file uploads to cloud storage: https://guides.rubyonrails.org/active_storage_overview.html
 * interact with db with Active Record query: https://guides.rubyonrails.org/active_record_querying.html
 * routing (including `_path` helper): https://guides.rubyonrails.org/routing.html#path-and-url-helpers
+* url_for https://guides.rubyonrails.org/routing.html
