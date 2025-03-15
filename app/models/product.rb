@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   has_many :stocks
   has_many :order_products
 
-  def image_url
-    image.url
-  end
+  # def image_url
+  #   image.url
+  # end
 end

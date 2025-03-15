@@ -6,6 +6,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    render json: @product.as_json.merge(image_url: @product.image_url)
+    render json: @product.as_json.merge(image_url: url_for(@product.image))
   end
 end
