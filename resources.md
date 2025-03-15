@@ -16,3 +16,4 @@
 * interact with db with Active Record query: https://guides.rubyonrails.org/active_record_querying.html
 * routing (including `_path` helper): https://guides.rubyonrails.org/routing.html#path-and-url-helpers
 * url_for https://guides.rubyonrails.org/routing.html
+* role-based auth: https://developer.auth0.com/resources/guides/api/rails/basic-authorization#validate-a-json-web-token-jwt-in-rails

@@ -8,7 +8,7 @@ RSpec.describe "POST /admin/signup/", type: :request do
       post "/admin/signup", params: {
         "admin": {
             "email": admin.email,
-            "password": admin.password,
+            "password": admin.password
         }
       }
     end

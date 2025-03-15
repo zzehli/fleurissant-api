@@ -1,5 +1,5 @@
 class Admin::OrdersController < AdminController
-  before_action :authenticate_admin!, :set_admin_order, only: %i[ show edit update destroy ]
+  :set_admin_order only: %i[ show edit update destroy ]
 
   # GET /admin/orders or /admin/orders.json
   def index

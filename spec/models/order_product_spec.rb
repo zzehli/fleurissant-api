@@ -13,4 +13,3 @@ RSpec.describe OrderProduct, type: :model do
     it { is_expected.to belong_to(:order) }
   end
 end
-    

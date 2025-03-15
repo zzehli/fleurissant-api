@@ -6,14 +6,14 @@ Rails.application.routes.draw do
     end
   end
   # devise_for :admins
-  devise_for :admins, path: 'admin', path_names: { 
-    sign_in: 'login', 
-    sign_out: 'logout',
-    registration: 'signup'
+  devise_for :admins, path: "admin", path_names: {
+    sign_in: "login",
+    sign_out: "logout",
+    registration: "signup"
   },
   controllers: {
-    sessions: 'admins/sessions',
-    registrations: 'admins/registrations'
+    sessions: "admins/sessions",
+    registrations: "admins/registrations"
   }, defaults: { format: :json }
 
 
@@ -42,6 +42,6 @@ Rails.application.routes.draw do
 
   post "webhook" => "webhooks#stripe"
   resources :products, only: [ :show, :index ]
-  
-  get '/current_admin', to: 'current_admin#index'
+
+  get "/current_admin", to: "current_admin#index"
 end

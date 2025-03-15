@@ -3,7 +3,7 @@ module ApiHelpers
         post "/admin/login", params: {
         "admin": {
             "email": admin.email,
-            "password": admin.password,
+            "password": admin.password
         }
     }
     end

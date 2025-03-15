@@ -57,21 +57,21 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "selenium-webdriver"
-  gem 'shoulda-matchers', '~> 6.0'
+  gem "shoulda-matchers", "~> 6.0"
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 7.0.0'
+  gem "rspec-rails", "~> 7.0.0"
   gem "factory_bot_rails"
   gem "faker"
 end
 
 gem "devise", "~> 4.9"
 
-gem 'devise-jwt'
+gem "devise-jwt"
 
 gem "stripe", "~> 13.3"
 
-gem 'rack-cors'
+gem "rack-cors"
 
-gem 'jsonapi-serializer'
+gem "jsonapi-serializer"
