@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  include Rails.application.routes.url_helpers
   has_one_attached :image do |attachable|
     attachable.variant :card, resize_and_pad: [ 500, 600 ]
   end
@@ -10,7 +11,8 @@ class Product < ApplicationRecord
   has_many :stocks
   has_many :order_products
 
-  # def image_url
-  #   image.url
-  # end
+  def image_url
+    image.attached? ? url_for(self.image) : nil
+    # image.url
+  end
 end

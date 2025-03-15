@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :stocks
     end
   end
+  default_url_options Rails.application.config.action_mailer.default_url_options
   # devise_for :admins
   devise_for :admins, path: "admin", path_names: {
     sign_in: "login",
