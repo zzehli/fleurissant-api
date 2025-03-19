@@ -1,6 +1,6 @@
 class Admin::ProductsController < AdminController
   # before_action :authenticate_admin!
-  :set_admin_product only: %i[ show edit update destroy ]
+  before_action :set_admin_product, only: %i[ show edit update destroy ]
   # GET /admin/products or /admin/products.json
   def index
     @admin_products = Product.all
@@ -25,6 +25,7 @@ class Admin::ProductsController < AdminController
 
   # POST /admin/products or /admin/products.json
   def create
+    puts admin_product_params
     @admin_product = Product.new(admin_product_params)
 
     respond_to do |format|
