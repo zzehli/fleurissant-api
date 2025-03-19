@@ -19,22 +19,22 @@ class Admin::StocksController < AdminController
     render json: { stock: @admin_stock, product: @product }
   end
 
+  # GET /admin/products/1/stocks/1/edit
   def edit
     @product = Product.find(params[:product_id])
     @admin_stock = Stock.find(params[:id])
     render json: { stock: @admin_stock, product: @product }
   end
 
+  # POST /admin/products/1/stocks or /admin/products/1/stocks.json
   def create
     @product = Product.find(params[:product_id])
     @admin_stock = @product.stocks.new(admin_stock_params)
 
     respond_to do |format|
       if @admin_stock.save
-        format.html { redirect_to admin_product_stock_url(@product, @admin_stock), notice: "Stock was successfully created." }
-        format.json { render :show, status: :created, location: @admin_stock }
+        format.json { render :show, status: :created,  location: admin_product_stock_path(@product, @admin_stock)}
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @admin_stock.errors, status: :unprocessable_entity }
       end
     end
@@ -43,10 +43,8 @@ class Admin::StocksController < AdminController
   def update
     respond_to do |format|
       if @admin_stock.update(admin_stock_params)
-        format.html { redirect_to admin_product_stock_url(@admin_stock.product, @admin_stock), notice: "Stock was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_stock }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @admin_stock.errors, status: :unprocessable_entity }
       end
     end
