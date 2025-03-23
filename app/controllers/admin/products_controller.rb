@@ -27,6 +27,7 @@ class Admin::ProductsController < AdminController
   def create
     puts admin_product_params
     @admin_product = Product.new(admin_product_params)
+    @admin_product.quantity = 0
 
     respond_to do |format|
       if @admin_product.save
