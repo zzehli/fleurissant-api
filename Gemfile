@@ -77,3 +77,5 @@ gem "rack-cors"
 gem "jsonapi-serializer"
 
 gem "sqlite3"
+
+gem "kamal", "~> 2.5"
