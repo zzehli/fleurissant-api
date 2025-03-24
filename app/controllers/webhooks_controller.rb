@@ -1,5 +1,5 @@
 class WebhooksController < ApplicationController
-  skip_forgery_protection
+  # skip_forgery_protection
 
   def stripe
     stripe_secret_key = Rails.application.credentials.dig(:stripe, :secret_key)
