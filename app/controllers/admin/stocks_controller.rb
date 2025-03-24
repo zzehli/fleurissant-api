@@ -33,7 +33,7 @@ class Admin::StocksController < AdminController
 
     respond_to do |format|
       if @admin_stock.save
-        format.json { render :show, status: :created,  location: admin_product_stock_path(@product, @admin_stock)}
+        format.json { render :show, status: :created,  location: admin_product_stock_path(@product, @admin_stock) }
       else
         format.json { render json: @admin_stock.errors, status: :unprocessable_entity }
       end
