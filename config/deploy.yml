@@ -52,7 +52,11 @@ env:
 #
 # aliases:
 #   shell: app exec --interactive --reuse "bash"
-
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
 # Use a different ssh user than root
 #
 # ssh:
@@ -62,6 +66,8 @@ env:
 #
 # volumes:
 #   - "app_storage:/app/storage"
+volumes:
+  - "plant_api_storage:/rails/storage"
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
