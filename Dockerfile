@@ -65,4 +65,4 @@ USER 1000:1000
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 EXPOSE 80
-CMD ["./bin/rails", "server"]
+CMD ["./bin/rails", "server", "-p", "80"]
