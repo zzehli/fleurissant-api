@@ -47,7 +47,7 @@ class CheckoutController < ApplicationController
       }
     )
 
-    render json: { url: session.url }     
+    render json: { url: session.url }
   end
 
   def success

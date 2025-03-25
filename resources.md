@@ -17,6 +17,7 @@
 * routing (including `_path` helper): https://guides.rubyonrails.org/routing.html#path-and-url-helpers
 * url_for https://guides.rubyonrails.org/routing.html
 * role-based auth: https://developer.auth0.com/resources/guides/api/rails/basic-authorization#validate-a-json-web-token-jwt-in-rails
+* change secrete `EDITOR="vim" rails credentials:edit --environment=production`
 # detailed to 
 - [ ] error handling on controller
 - [ ] customer checkout backend route
