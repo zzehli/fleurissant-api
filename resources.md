@@ -18,6 +18,7 @@
 * url_for https://guides.rubyonrails.org/routing.html
 * role-based auth: https://developer.auth0.com/resources/guides/api/rails/basic-authorization#validate-a-json-web-token-jwt-in-rails
 * change secrete `EDITOR="vim" rails credentials:edit --environment=production`
+* `openssl s_client -connect web.site:433`
 # detailed to 
 - [ ] error handling on controller
 - [ ] customer checkout backend route
