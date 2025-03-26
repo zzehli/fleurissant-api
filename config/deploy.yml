@@ -7,7 +7,7 @@ image: bluejae/plant_api
 # Deploy to these servers.
 servers:
   web:
-    - fleurissant.jaeli.my.id
+    - 147.182.153.76
   # job:
   #   hosts:
   #     - 192.168.0.1
