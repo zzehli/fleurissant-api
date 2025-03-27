@@ -41,7 +41,8 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v2
       
-      # - name: Run tests
-      #   run: bundle exec rake
+      - name: Run tests
+        run: bundle exec rake
+
       - name: deploy with Kamal
-        run: Kamal deploy
+        run: kamal deploy
