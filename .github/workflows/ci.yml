@@ -45,4 +45,6 @@ jobs:
         run: kamal deploy
 
       - name: Run tests
-        run: bin/rails spec
+        env:
+          RAILS_ENV: test
+        run: bin/rails spec --trace
