@@ -45,6 +45,7 @@ builder:
 env:
   secret:
     - RAILS_MASTER_KEY
+    - RAILS_MASTER_KEY_TEST
   # clear:
     # DB_HOST: 192.168.0.2
 # Aliases are triggered with "bin/kamal <alias>". You can overwrite arguments on invocation:
