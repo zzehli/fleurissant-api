@@ -34,7 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           gem install specific_install
-          gem specific_install https://github.com/basecamp/kamal.git
+          gem specific_install -l https://github.com/basecamp/kamal.git -b v2.5.3
  
       # https://github.com/marketplace/actions/docker-setup-buildx
       - name: Set up Docker Buildx
