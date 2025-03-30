@@ -25,16 +25,13 @@ class Admin::ProductsController < AdminController
 
   # POST /admin/products or /admin/products.json
   def create
-    puts admin_product_params
     @admin_product = Product.new(admin_product_params)
     @admin_product.quantity = 0
 
     respond_to do |format|
       if @admin_product.save
-        format.html { redirect_to admin_product_path(@admin_product), notice: "Product was successfully created." }
-        format.json { render :show, status: :created, location: @admin_product }
+        format.json { render json: @admin_product, status: :created, location: @admin_product }
       else
-        format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @admin_product.errors, status: :unprocessable_entity }
       end
     end
@@ -44,10 +41,8 @@ class Admin::ProductsController < AdminController
   def update
     respond_to do |format|
       if @admin_product.update(admin_product_params)
-        format.html { redirect_to admin_product_path(@admin_product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_product }
       else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @admin_product.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +53,6 @@ class Admin::ProductsController < AdminController
     @admin_product.destroy!
 
     respond_to do |format|
-      format.html { redirect_to admin_products_path, status: :see_other, notice: "Product was successfully destroyed." }
       format.json { head :no_content }
     end
   end
