@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins 'http://localhost:5173' # Vite dev server URL
+    origins Rails.env.production? ? 'https://fleurissant.jaeli.my.id' : 'http://localhost:5173' # Use different origins for production and development
       resource '*',
         headers: :any,
         expose: ['access-token', 'expiry', 'token-type', 'Authorization'],
