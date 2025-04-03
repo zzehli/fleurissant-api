@@ -66,6 +66,6 @@ class Admin::ProductsController < AdminController
     # Only allow a list of trusted parameters through.
     def admin_product_params
       # image param is necessary here to attach images
-      params.require(:product).permit(:name, :description, :price, :active, :image)
+      params.require(:product).permit(:name, :description, :price, :active, :image, :category)
     end
 end

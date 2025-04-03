@@ -9,7 +9,6 @@ RSpec.describe "GET /admin/products", type: :request do
   context 'with valid parameters' do
     before do
       login_user(admin)
-      puts JSON.parse(response.body)
       get "/admin/products", headers: {
         Authorization: response.headers['Authorization']
       }

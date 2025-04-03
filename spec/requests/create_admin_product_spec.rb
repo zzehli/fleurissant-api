@@ -1,13 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "POST /admin/products", type: :request do
-  let(:valid_params) do
-    {
-        name: "Test Product",
-        description: "This is a test product",
-        price: 100.0
-    }
-  end
+  let!(:product1) { build(:product) }
 
   let(:invalid_params) do
     {
@@ -34,14 +28,18 @@ RSpec.describe "POST /admin/products", type: :request do
             "ACCEPT" => "application/json"
         }
         params = {
-            product: valid_params.merge(image: test_image)
+            product: {
+              name: product1.name,
+              description: product1.description,
+              price: product1.price,
+              category: product1
+            }
         }
         post "/admin/products", headers: headers, params: params
-
       expect(response.status).to eq(201)
       json = JSON.parse(response.body)
 
-      expect(json['name']).to eq(valid_params[:name])
+      expect(json['name']).to eq(product1.name)
     end
 
 
