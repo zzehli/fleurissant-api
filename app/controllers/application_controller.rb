@@ -11,9 +11,17 @@ class ApplicationController < ActionController::API
   #     port: request.port
   #   }
   # end
+
+  def sanitize_pagination_params
+    puts "run sanitization"
+    params[:page] = params[:page].to_i if params[:page]
+    params[:limit] = params[:page].to_i if params[:limit]
+  end
+
   def set_product_json(product)
     product.as_json.merge(image_url: product.image_url)
   end
+
   def set_products_json(products)
     products.map { |product| set_product_json(product) }
   end
