@@ -1,5 +1,4 @@
 class Admin::ProductsController < AdminController
-  # before_action :authenticate_admin!
   before_action :set_admin_product, only: %i[ show edit update destroy ]
   # GET /admin/products or /admin/products.json
   def index

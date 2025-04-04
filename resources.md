@@ -23,3 +23,4 @@
 - [ ] error handling on controller
 - [ ] customer checkout backend route
 - [ ] figure out cors in deployment: https://github.com/cyu/rack-cors
+- [ ] add a category to the product
