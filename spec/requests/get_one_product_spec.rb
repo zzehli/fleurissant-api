@@ -13,7 +13,6 @@ RSpec.describe "GET /products/:id", type: :request do
     end
 
     it 'returns the product' do
-      puts response.body
       json = JSON.parse(response.body)
       expect(json['name']).to eq(product1.name)
     end
