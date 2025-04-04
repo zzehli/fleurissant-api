@@ -23,4 +23,14 @@ RSpec.describe "GET /admin/products", type: :request do
       expect(json.size).to eq(10)
     end
   end
+
+  context 'without login parameters' do
+    before do
+      get "/admin/products"
+    end
+
+    it 'returns a 401 OK status' do
+      expect(response.status).to eq(401)
+    end
+  end
 end
