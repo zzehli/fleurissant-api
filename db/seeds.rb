@@ -54,7 +54,7 @@ products_data.each do |product_data|
     price: product_data['price'],
     description: product_data['description'],
     category: product_data['category'],
-    quantity: 0
+    quantity: 5
   )
 
   # Attach the image based on the 'code' field

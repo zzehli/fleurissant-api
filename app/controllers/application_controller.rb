@@ -13,7 +13,6 @@ class ApplicationController < ActionController::API
   # end
 
   def sanitize_pagination_params
-    puts "run sanitization"
     params[:page] = params[:page].to_i if params[:page]
     params[:limit] = params[:page].to_i if params[:limit]
   end

@@ -19,9 +19,11 @@
 * role-based auth: https://developer.auth0.com/resources/guides/api/rails/basic-authorization#validate-a-json-web-token-jwt-in-rails
 * change secrete `EDITOR="vim" rails credentials:edit --environment=production`
 * `openssl s_client -connect web.site:433`
+* temporary solution: seed data with `kamal app exec --primary -i './bin/rails db:seed'`
 # detailed to 
 - [ ] error handling on controller
 - [ ] customer checkout backend route
 - [x] figure out cors in deployment: https://github.com/cyu/rack-cors
 - [x] add a category to the product
 - [ ] logout error
+- [ ] cart add based on stock
