@@ -5,15 +5,8 @@ class CheckoutController < ApplicationController
     cart = params[:cart]
     line_items = cart.map do |i|
       product = Product.find(i["id"])
-      product_stock = product.stocks.first
-      if product_stock.nil?
-        render json: {
-          error: "Not enough stock for #{product.name}.",
-          status: 400
-        }
-        return
-      end
-      if product_stock.amount < i["quantity"].to_i
+      product_stock = product.quantity
+      if product_stock == 0
         render json: {
           error: "Not enough stock for #{product.name}.",
           status: 400
@@ -27,8 +20,7 @@ class CheckoutController < ApplicationController
           product_data: {
             name: i["name"],
             metadata: {
-              product_id: product.id,
-              product_stock_id: product_stock.id
+              product_id: product.id
             }
           },
           currency: "cad",
@@ -36,12 +28,12 @@ class CheckoutController < ApplicationController
         }
       }
     end
-    puts line_items
+    host = Rails.env.production? ? "https://zzehli.github.io/fleurissant" : "http://localhost:5173/fleurissant"
     session = Stripe::Checkout::Session.create(
       mode: "payment",
       line_items: line_items,
-      success_url: "http://localhost:5173/checkout/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "http://localhost:5173/checkout/cancel",
+      success_url:  "#{host}/checkout/success?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "#{host}/checkout/cancel",
       shipping_address_collection: {
         allowed_countries: [ "CA" ]
       }
