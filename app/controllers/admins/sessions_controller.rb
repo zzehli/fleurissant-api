@@ -3,12 +3,17 @@
 class Admins::SessionsController < Devise::SessionsController
   respond_to :json
   private
-  # before_action :configure_sign_in_params, only: [:create]
   def respond_with(resource, _opts = {})
-    render json: {
-      status: { code: 200, message: "Logged in sucessfully." },
-      data: AdminSerializer.new(resource).serializable_hash[:data][:attributes]
-    }, status: :ok
+    if request.method == "POST" && resource.persisted?
+      render json: {
+        status: { code: 200, message: "Logged in successfully." },
+        data: AdminSerializer.new(resource).serializable_hash[:data][:attributes]
+      }, status: :ok
+    else
+      render json: {
+        status: { code: 422, message: "Admin user couldn't be created successfully. #{resource.errors.full_messages.to_sentence}" }
+      }, status: :unprocessable_entity
+    end
   end
 
   def respond_to_on_destroy
@@ -25,26 +30,4 @@ class Admins::SessionsController < Devise::SessionsController
       }, status: :unauthorized
       end
   end
-
-  # GET /resource/sign_in
-  # def new
-  #   super
-  # end
-
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
-
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
-
-  # protected
-
-  # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
-  # end
 end

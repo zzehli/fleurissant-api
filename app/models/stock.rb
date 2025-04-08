@@ -15,6 +15,6 @@ class Stock < ApplicationRecord
       puts "Failed to update product quantity: #{e.message}"
       Rails.logger.error "Failed to update product quantity: #{e.message}"
       Rails.logger.error e.backtrace.join("\n")
-    end    
+    end
   end
 end
