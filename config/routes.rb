@@ -17,6 +17,16 @@ Rails.application.routes.draw do
     registrations: "admins/registrations"
   }, defaults: { format: :json }
 
+  devise_for :customers, path: "customer",
+  path_names: {
+    sign_in: "login",
+    sign_out: "logout",
+    registration: "signup"
+  },
+  controllers: {
+    sessions: "customer/sessions",
+    registrations: "customer/registrations"
+  }, defaults: { format: :json }
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -36,6 +46,12 @@ Rails.application.routes.draw do
   end
 
   get "admin" => "admin#index"
+
+  authenticated :customer_user do
+    root to: "customer#index", as: :customer_root
+  end
+
+  get "customer" => "customer#index"
   get "cart" => "carts#show"
   post "checkout" => "checkout#create"
   get "checkout/success" => "checkout#success"
