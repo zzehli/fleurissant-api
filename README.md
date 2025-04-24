@@ -2,7 +2,7 @@
 
 The **Fleurissant API** is a backend application for the Fleurissant app, built with Ruby on Rails. It provides endpoints and functionality to access storefront, manage user groups and inventory.
 
-checkout the live site: https://zzehli.github.io/fleurissant/
+checkout the live site: https://jaeli.space/fleurissant/
 
 ## Features
 
