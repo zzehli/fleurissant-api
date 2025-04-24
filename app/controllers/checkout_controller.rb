@@ -28,7 +28,7 @@ class CheckoutController < ApplicationController
         }
       }
     end
-    host = Rails.env.production? ? "https://zzehli.github.io/fleurissant" : "http://localhost:5173/fleurissant"
+    host = Rails.env.production? ? "https://jaeli.space//fleurissant" : "http://localhost:5173/fleurissant"
     session = Stripe::Checkout::Session.create(
       mode: "payment",
       line_items: line_items,

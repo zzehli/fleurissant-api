@@ -20,6 +20,7 @@
 * change secrete `EDITOR="vim" rails credentials:edit --environment=production`
 * `openssl s_client -connect web.site:433`
 * temporary solution: seed data with `kamal app exec --primary -i './bin/rails db:seed'`
+* rate limit rails: https://blog.saeloun.com/2024/04/01/rails-7-2-adds-rate-limiting-to-action-controller/
 # detailed to 
 - [ ] error handling on controller
 - [ ] customer checkout backend route

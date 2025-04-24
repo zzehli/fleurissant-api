@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :sanitize_pagination_params, only: %i[ index ]
   def index
-    @products = Product.all.page(params[:page], params[:limit])
+    @products = Product.where(category: "indoor plants").page(params[:page], params[:limit])
     render json: set_products_json(@products)
   end
 
