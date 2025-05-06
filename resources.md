@@ -21,6 +21,7 @@
 * `openssl s_client -connect web.site:433`
 * temporary solution: seed data with `kamal app exec --primary -i './bin/rails db:seed'`
 * rate limit rails: https://blog.saeloun.com/2024/04/01/rails-7-2-adds-rate-limiting-to-action-controller/
+* go to rails console: `kamal app exec -i 'bin/rails console'` or db `kamal app exec -i 'bin/rails db'`
 # detailed to 
 - [ ] error handling on controller
 - [ ] customer checkout backend route

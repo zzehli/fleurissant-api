@@ -13,8 +13,7 @@ Rails.application.routes.draw do
     registration: "signup"
   },
   controllers: {
-    sessions: "admins/sessions",
-    registrations: "admins/registrations"
+    sessions: "admins/sessions"
   }, defaults: { format: :json }
 
   devise_for :customers, path: "customer",
