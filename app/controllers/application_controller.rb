@@ -14,7 +14,7 @@ class ApplicationController < ActionController::API
 
   def sanitize_pagination_params
     params[:page] = params[:page].to_i if params[:page]
-    params[:limit] = params[:page].to_i if params[:limit]
+    params[:limit] = params[:limit].to_i if params[:limit]
   end
 
   def set_product_json(product)
