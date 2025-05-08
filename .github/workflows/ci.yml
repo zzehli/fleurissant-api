@@ -34,7 +34,13 @@ jobs:
         run: |
           gem install specific_install
           gem specific_install -l https://github.com/basecamp/kamal.git -b v2.5.3
- 
+      
+      - name: Run tests
+        env:
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY_TEST }}
+        run: bin/rails spec --trace
+        
       # https://github.com/marketplace/actions/docker-setup-buildx
       - name: Set up Docker Buildx
         id: buildx
@@ -44,9 +50,3 @@ jobs:
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: kamal deploy
-
-      - name: Run tests
-        env:
-          RAILS_ENV: test
-          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY_TEST }}
-        run: bin/rails spec --trace
